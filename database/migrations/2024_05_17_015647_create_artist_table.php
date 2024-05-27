@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('artist', function (Blueprint $table) {
             $table->integer('id_artist')->autoIncrement();
-            $table->string('name')->unique();
+            $table->string('nama_artist')->unique();
             $table->integer('id_kategori');
-            $table->string('genre')->nullable();
             $table->text('description')->nullable();
-            $table->string('image_url')->nullable();
+            $table->string('gambar_artist');
             $table->softDeletes();
             $table->foreign('id_kategori')->references('id_kategori')->on('kategori');
             $table->timestamps();

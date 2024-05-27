@@ -41,7 +41,7 @@
 
 
                     <button type="submit" class="btn btn-primary">Reset</button>
-                    <a href="{{ route('dashboard.index') }}" class="btn btn-primary">Kembali</a>
+                    <a href="{{ route('dashboard.index') }}" class="btn btn-secondary">Kembali</a>
                 </form>
             </div>
         </div>

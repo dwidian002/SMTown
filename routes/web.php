@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +41,30 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::get('/kategori/ubah/{id}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
         Route::post('/kategori/prosesUbah', [KategoriController::class, 'prosesUbah'])->name('kategori.prosesUbah');
         Route::get('/kategori/hapus{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
+
+        Route::get('/artist', [ArtistController::class, 'index'])->name('artist.index');
+        Route::get('/artist/tambah', [ArtistController::class, 'tambah'])->name('artist.tambah');
+        Route::post('/artist/prosesTambah', [ArtistController::class, 'prosesTambah'])->name('artist.prosesTambah');
+        Route::get('/artist/ubah/{id}', [ArtistController::class, 'ubah'])->name('artist.ubah');
+        Route::post('/artist/prosesUbah', [ArtistController::class, 'prosesUbah'])->name('artist.prosesUbah');
+        Route::get('/artist/hapus{id}', [ArtistController::class, 'hapus'])->name('artist.hapus');
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
+
+Route::get('files/{filename}', function ($filename) {
+    $path = storage_path('app/public/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+})->name('storage');
