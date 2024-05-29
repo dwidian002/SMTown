@@ -12,8 +12,8 @@ class Artist extends Model
     protected $table = "artist";
 
     protected $primaryKey = "id_artist";
-        
-    protected $fillable = ["name","id_kategori","genre","description","image_url"];
+
+    protected $fillable = ["nama_artist","id_kategori","description","gambar_artist"];
 
     public function kategori(){
         return $this->belongsTo(Kategori::class,'id_kategori');

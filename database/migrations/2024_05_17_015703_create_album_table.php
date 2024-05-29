@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('album', function (Blueprint $table) {
             $table->integer('id_album')->autoIncrement();
             $table->string('name_album');
+            $table->string('gambar_album');
             $table->string('genre')->nullable();
             $table->string('barcode')->unique();
             $table->integer('id_artist');

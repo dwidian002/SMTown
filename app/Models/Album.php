@@ -13,7 +13,7 @@ class Album extends Model
 
     protected $primaryKey = "id_album";
 
-    protected $fillable = ["barcode", "name","id_artist", "price"];
+    protected $fillable = ["barcode", "name","gambar_album","id_artist", "price","genre"];
 
     public function artist(){
         return $this->belongsTo(Artist::class,'id_artist');
