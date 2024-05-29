@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -48,6 +49,13 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::get('/artist/ubah/{id}', [ArtistController::class, 'ubah'])->name('artist.ubah');
         Route::post('/artist/prosesUbah', [ArtistController::class, 'prosesUbah'])->name('artist.prosesUbah');
         Route::get('/artist/hapus{id}', [ArtistController::class, 'hapus'])->name('artist.hapus');
+
+        Route::get('/album', [AlbumController::class, 'index'])->name('album.index');
+        Route::get('/album/tambah', [AlbumController::class, 'tambah'])->name('album.tambah');
+        Route::post('/album/prosesTambah', [AlbumController::class, 'prosesTambah'])->name('album.prosesTambah');
+        Route::get('/album/ubah/{id}', [AlbumController::class, 'ubah'])->name('album.ubah');
+        Route::post('/album/prosesUbah', [AlbumController::class, 'prosesUbah'])->name('album.prosesUbah');
+        Route::get('/album/hapus{id}', [AlbumController::class, 'hapus'])->name('album.hapus');
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
