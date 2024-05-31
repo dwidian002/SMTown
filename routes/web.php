@@ -4,6 +4,7 @@ use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
@@ -56,10 +57,18 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::get('/album/ubah/{id}', [AlbumController::class, 'ubah'])->name('album.ubah');
         Route::post('/album/prosesUbah', [AlbumController::class, 'prosesUbah'])->name('album.prosesUbah');
         Route::get('/album/hapus{id}', [AlbumController::class, 'hapus'])->name('album.hapus');
+
+
+        Route::get('/kasir', [KasirController::class, 'index']);
+        Route::post('/kasir/search-barcode', [KasirController::class, 'searchProduct']);
+        Route::post('/kasir/insert', [KasirController::class, 'insert']);
+
+        
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
+
 
 Route::get('files/{filename}', function ($filename) {
     $path = storage_path('app/public/' . $filename);
