@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Halleluya Store</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -20,8 +20,8 @@
 
     <style>
         .bg-gradient-primary {
-            background: linear-gradient(180deg, #ffb9c2 10%, #ffb9c2 100%) !important;
-            background-size: cover;
+            background: url('{{ asset('assets-fe/source/images/aespa.gif') }}') no-repeat center center fixed !important;
+            background-size: cover !important;
         }
 
         .btn-primary {
