@@ -17,6 +17,7 @@
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
       </li>
+      @can('admin')
       <li class="nav-item">
         <a class="nav-link " href="{{ route('kategori.index') }}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -33,6 +34,7 @@
           <span class="nav-link-text ms-1">Artist</span>
         </a>
       </li>
+      @endcan
       <li class="nav-item">
         <a class="nav-link " href="{{ route('album.index') }}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -41,6 +43,16 @@
           <span class="nav-link-text ms-1">Album</span>
         </a>
       </li>
+      @can('superadmin')
+      <li class="nav-item">
+        <a class="nav-link " href="{{route('user.list')}}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa fa-address-book ni ni-single-02 text-success text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Daftar Kasir</span>
+        </a>
+      </li>
+      @endcan
       <li class="nav-item">
         <a class="nav-link " href="{{ url('admin/kasir/') }}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -60,6 +72,15 @@
           <span class="nav-link-text ms-1">Profile</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{route('dashboard.resetPassword')}}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa fa-key ni ni-single-02 text-warning text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Ganti Password</span>
+        </a>
+      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">

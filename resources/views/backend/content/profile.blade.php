@@ -16,6 +16,11 @@
                     <input value="{{ $user->email }}" class="form-control" readonly>
                 </div>
 
+                <div class="mb-3">
+                    <label class="col-form-label">Role</label>
+                    <input value="{{ $user->role }}" class="form-control" readonly>
+                </div>
+
                 <a href="{{ route('dashboard.index') }}" class="btn btn-secondary">Kembali</a>
 
             </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::get('/', function () {
 
 Route::get('/login', [AuthController::class, 'index'])->name('auth.index')->middleware('guest');
 Route::post('/login', [AuthController::class, 'verify'])->name('auth.verify');
+
 
 Route::group(['middleware' => 'auth:user'], function () {
     Route::prefix('admin')->group(function () {
@@ -56,6 +58,14 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::get('/album/ubah/{id}', [AlbumController::class, 'ubah'])->name('album.ubah');
         Route::post('/album/prosesUbah', [AlbumController::class, 'prosesUbah'])->name('album.prosesUbah');
         Route::get('/album/hapus/{id}', [AlbumController::class, 'hapus'])->name('album.hapus');
+
+        Route::get('/user', [UserController::class, 'index'])->name('user.list');
+        Route::get('/user/tambah', [UserController::class, 'tambah'])->name('user.tambah');
+        Route::post('/user/prosesTambah', [UserController::class, 'prosesTambah'])->name('user.prosesTambah');
+        Route::get('/activate/{token}', [UserController::class, 'activate'])->name('user.activate');
+        Route::get('/user/ubah/{id}', [UserController::class, 'ubah'])->name('user.ubah');
+        Route::post('/user/prosesUbah', [UserController::class, 'prosesUbah'])->name('user.prosesUbah');
+        Route::get('/user/hapus/{id}', [UserController::class, 'hapus'])->name('user.hapus');
 
         Route::get('/kasir', [KasirController::class, 'index'])->name('kasir.index');
         Route::post('/kasir/searchAlbum', [KasirController::class, 'searchAlbum'])->name('kasir.searchAlbum');

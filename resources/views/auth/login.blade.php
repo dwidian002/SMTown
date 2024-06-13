@@ -18,22 +18,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
     <title>
         Argon Dashboard 2 by Creative Tim
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="{{asset('assets/css/nucleo-icons.css" rel="stylesheet')}}" />
+    <link href="{{asset('assets/css/nucleo-svg.css" rel="stylesheet')}}" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="{{asset('assets/css/nucleo-svg.css" rel="stylesheet')}}" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <link id="pagestyle" href="{{asset('assets/css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
     <style>
+        .text-primary {
+            color: #FBA1B7 !important;
+        }
+
         .form {
             display: flex;
             flex-direction: column;
@@ -62,7 +66,7 @@
             transition: 400ms;
             font-family: cursive;
         }
-        
+
         .login:hover {
             background-color: #FF87B2;
             color: white;
@@ -70,23 +74,24 @@
             cursor: pointer;
         }
 
-        .page-header{
+        .page-header {
             background-image: url('assets/img/aespa.jpg');
         }
 
         .page-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Warna gelap dengan opacity */
-    }
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Warna gelap dengan opacity */
+        }
     </style>
 </head>
 
-<body class="" style="background-color: #FFD0D0;" >
+<body class="" style="background-color: #FFD0D0;">
     <!-- Navbar -->
     <!-- End Navbar -->
     <main class="main-content mt-0">
@@ -120,11 +125,10 @@
                             <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                         </div>
                         <span class="Password" style="color: black;">Password</span>
-                        <div class="form-group">
+                        <div class="form-group mb-0">
                             <input type="password" name='password' class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         </div>
                         <input type="submit" value="Login" class="login">
-                        <p class="text-sm mt-0.2 mb-0">Belum punya akun? <a href="javascript:;" class="text-dark font-weight-bolder">Register</a></p>
                     </form>
                 </div>
             </div>
@@ -137,10 +141,10 @@
 
     <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
     <!--   Core JS Files   -->
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
+    <script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -153,7 +157,7 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    <script src="{{asset('assets/js/argon-dashboard.min.js?v=2.0.4')}}"></script>
 </body>
 
 </html>

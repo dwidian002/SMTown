@@ -58,12 +58,26 @@
       background-color: white !important;
       color: black;
       border-color: black !important;
+      border-bottom-color: black !important;
     }
 
     .btn-primary:hover{
       background-color: #FF407D !important;
       color: white;
+      border-bottom-color: black;
     }
+
+    .btn-secondary {
+      background-color: white !important;
+      color: black !important;
+      border-color: black !important;
+    }
+
+    .btn-secondary:hover{
+      background-color: #6c757d !important;
+      color: white !important;
+    }
+
   </style>
 
 </head>

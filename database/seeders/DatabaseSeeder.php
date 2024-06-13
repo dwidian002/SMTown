@@ -18,7 +18,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Superadmin',
             'email' => 'admin@mail.com',
-            'password' => password_hash('asdasd', PASSWORD_DEFAULT)
+            'password' => password_hash('asdasd', PASSWORD_DEFAULT),
+            'role' => 'admin',
+            'is_active' => 1,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
 
         DB::table('kategori')->insert([

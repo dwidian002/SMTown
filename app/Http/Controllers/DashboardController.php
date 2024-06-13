@@ -44,7 +44,7 @@ class DashboardController extends Controller
 
             try {
                 $user->save();
-                return redirect(route('dashboard.resetPassword'))->with('pesan', ['succsess', 'Selamat anda berhasil ubah password']);
+                return redirect(route('dashboard.resetPassword'))->with('pesan', ['success', 'Berhasil Ubah Password']);
 
             } catch (\Exception $e) {
                 return redirect(route('dashboard.resetPassword'))->with('pesan', ['danger', 'Gagal ubah password']);
