@@ -1,140 +1,73 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon">
-            <img src="{{ asset('assets/img/logo-sm.jpg') }}" alt="Logo" class="sidebar-brand-logo">
-        </div>
-        <div class="sidebar-brand-text mx-1">Haleluya Store</div>
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+  <div class="sidenav-header">
+    <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
+      <img src="{{ asset('assets/img/smlogo.jpg') }}" class="navbar-brand-img h-100" alt="main_logo" >
+      <span class="ms-1 font-weight-bold">HALELUYA STORE</span>
     </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('kategori.index') }}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Kategori</span>
+  </div>
+  <hr class="horizontal dark mt-0">
+  <div class=" w-auto " id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="{{route('dashboard.index')}}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Dashboard</span>
         </a>
-        <a class="nav-link" href="{{ route('artist.index') }}">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Artist</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{ route('kategori.index') }}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-fw fa-table ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Kategori</span>
         </a>
-        <a class="nav-link" href="{{ route('album.index') }}">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Album</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{ route('artist.index') }}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-fw fa-users ni ni-credit-card text-success text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Artist</span>
         </a>
-        <a class="nav-link" href="{{ route('kasir.index') }}">
-            <i class="nav-icon fas fa-cash-register"></i>
-            <span>Aplikasi Kasir</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{ route('album.index') }}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-fw fa-book ni ni-app text-info text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Album</span>
         </a>
-        <a href="{{ url('/transaksi') }}" class="nav-link">
-            <i class="nav-icon fas fa-list"></i>
-            <span>
-                Data Transaksi
-            </span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{ url('admin/kasir/') }}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="nav-icon fas fa-cash-register ni ni-collection text-danger text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Aplikasi Kasir</span>
         </a>
-
-    <li class="nav-item">
-        <a href="" class="nav-link">
-            <i class=""></i>
-            <p>
-                Data Transaksi
-            </p>
+      </li>
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{{route('dashboard.profile')}}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Profile</span>
         </a>
-    </li>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
-        </div>
-    </div>
-    </li>
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-sign-out-alt ni ni-world-2 text-danger text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Logout</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Addons
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
-</ul>
+      </li>
+    </ul>
+  </div>
+</aside>

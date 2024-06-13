@@ -1,311 +1,415 @@
 @extends('backend/layout/main')
 @section('content')
 
-<div class="container-fluid">
-    <!-- Page Heading -->
+<div class="container-fluid py-4">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
-
-    <!-- Content Row -->
     <div class="row">
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Earnings (Monthly)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Earnings (Annual)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                <h5 class="font-weight-bolder">
+                                    $53,000
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                    since yesterday
+                                </p>
                             </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                                <h5 class="font-weight-bolder">
+                                    2,300
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                    since last week
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
+                                <h5 class="font-weight-bolder">
+                                    +3,462
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                    since last quarter
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
+                                <h5 class="font-weight-bolder">
+                                    $103,430
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                                <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+            <div class="card z-index-2 h-100">
+                <div class="card-header pb-0 pt-3 bg-transparent">
+                    <h6 class="text-capitalize">Sales overview</h6>
+                    <p class="text-sm mb-0">
+                        <i class="fa fa-arrow-up text-success"></i>
+                        <span class="font-weight-bold">4% more</span> in 2021
+                    </p>
+                </div>
+                <div class="card-body p-3">
+                    <div class="chart">
+                        <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card card-carousel overflow-hidden h-100 p-0">
+                <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner border-radius-lg h-100">
+                        <div class="carousel-item h-100 active" style="background-image: url('/assets/img/carousel-1.jpg');
+      background-size: cover;">
+                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                    <i class="ni ni-camera-compact text-dark opacity-10"></i>
                                 </div>
-                                <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                <h5 class="text-white mb-1">Get started with Argon</h5>
+                                <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100" style="background-image: url('/assets/img/carousel-2.jpg');
+      background-size: cover;">
+                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                    <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                                </div>
+                                <h5 class="text-white mb-1">Faster way to create web pages</h5>
+                                <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100" style="background-image: url('/assets/img/carousel-3.jpg');
+      background-size: cover;">
+                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                    <i class="ni ni-trophy text-dark opacity-10"></i>
+                                </div>
+                                <h5 class="text-white mb-1">Share with us your design tips!</h5>
+                                <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+            <div class="card ">
+                <div class="card-header pb-0 p-3">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="mb-2">Sales by Country</h6>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center ">
+                        <tbody>
+                            <tr>
+                                <td class="w-30">
+                                    <div class="d-flex px-2 py-1 align-items-center">
+                                        <div>
+                                            <img src="{{asset('assets/img/icons/flags/US.png')}}" alt="Country flag">
+                                        </div>
+                                        <div class="ms-4">
+                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <h6 class="text-sm mb-0">United States</h6>
+                                        </div>
                                     </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
+                                        <h6 class="text-sm mb-0">2500</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Value:</p>
+                                        <h6 class="text-sm mb-0">$230,900</h6>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-sm">
+                                    <div class="col text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
+                                        <h6 class="text-sm mb-0">29.9%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-30">
+                                    <div class="d-flex px-2 py-1 align-items-center">
+                                        <div>
+                                            <img src="{{asset('assets/img/icons/flags/DE.png')}}" alt="Country flag">
+                                        </div>
+                                        <div class="ms-4">
+                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <h6 class="text-sm mb-0">Germany</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
+                                        <h6 class="text-sm mb-0">3.900</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Value:</p>
+                                        <h6 class="text-sm mb-0">$440,000</h6>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-sm">
+                                    <div class="col text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
+                                        <h6 class="text-sm mb-0">40.22%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-30">
+                                    <div class="d-flex px-2 py-1 align-items-center">
+                                        <div>
+                                            <img src="{{asset('assets/img/icons/flags/GB.png')}}" alt="Country flag">
+                                        </div>
+                                        <div class="ms-4">
+                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <h6 class="text-sm mb-0">Great Britain</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
+                                        <h6 class="text-sm mb-0">1.400</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Value:</p>
+                                        <h6 class="text-sm mb-0">$190,700</h6>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-sm">
+                                    <div class="col text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
+                                        <h6 class="text-sm mb-0">23.44%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-30">
+                                    <div class="d-flex px-2 py-1 align-items-center">
+                                        <div>
+                                            <img src="{{asset('assets/img/icons/flags/BR.png')}}" alt="Country flag">
+                                        </div>
+                                        <div class="ms-4">
+                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <h6 class="text-sm mb-0">Brasil</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
+                                        <h6 class="text-sm mb-0">562</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Value:</p>
+                                        <h6 class="text-sm mb-0">$143,960</h6>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-sm">
+                                    <div class="col text-center">
+                                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
+                                        <h6 class="text-sm mb-0">32.14%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-header pb-0 p-3">
+                    <h6 class="mb-0">Categories</h6>
+                </div>
+                <div class="card-body p-3">
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                            <div class="d-flex align-items-center">
+                                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                    <i class="ni ni-mobile-button text-white opacity-10"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-1 text-dark text-sm">Devices</h6>
+                                    <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pending Requests</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Content Row -->
-
-    <div class="row">
-
-        <!-- Area Chart -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pie Chart -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Direct
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Social
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Referral
-                        </span>
-                    </div>
+                            <div class="d-flex">
+                                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                            <div class="d-flex align-items-center">
+                                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                    <i class="ni ni-tag text-white opacity-10"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-1 text-dark text-sm">Tickets</h6>
+                                    <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                            <div class="d-flex align-items-center">
+                                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                    <i class="ni ni-box-2 text-white opacity-10"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-1 text-dark text-sm">Error logs</h6>
+                                    <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                            <div class="d-flex align-items-center">
+                                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                    <i class="ni ni-satisfied text-white opacity-10"></i>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-1 text-dark text-sm">Happy users</h6>
+                                    <span class="text-xs font-weight-bold">+ 430</span>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Content Row -->
-    <div class="row">
-
-        <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
-
-            <!-- Project Card Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+    <footer class="footer pt-3  ">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                    <div class="copyright text-center text-sm text-muted text-lg-start">
+                        © <script>
+                            document.write(new Date().getFullYear())
+                        </script>,
+                        made with <i class="fa fa-heart"></i> by
+                        <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                        for a better web.
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                <div class="col-lg-6">
+                    <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Color System -->
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-primary text-white shadow">
-                        <div class="card-body">
-                            Primary
-                            <div class="text-white-50 small">#4e73df</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-success text-white shadow">
-                        <div class="card-body">
-                            Success
-                            <div class="text-white-50 small">#1cc88a</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-info text-white shadow">
-                        <div class="card-body">
-                            Info
-                            <div class="text-white-50 small">#36b9cc</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-warning text-white shadow">
-                        <div class="card-body">
-                            Warning
-                            <div class="text-white-50 small">#f6c23e</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-danger text-white shadow">
-                        <div class="card-body">
-                            Danger
-                            <div class="text-white-50 small">#e74a3b</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-secondary text-white shadow">
-                        <div class="card-body">
-                            Secondary
-                            <div class="text-white-50 small">#858796</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-light text-black shadow">
-                        <div class="card-body">
-                            Light
-                            <div class="text-black-50 small">#f8f9fc</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-dark text-white shadow">
-                        <div class="card-body">
-                            Dark
-                            <div class="text-white-50 small">#5a5c69</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
-        <div class="col-lg-6 mb-4">
-
-            <!-- Illustrations -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                        constantly updated collection of beautiful svg images that you can use
-                        completely free and without attribution!</p>
-                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                        unDraw &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Approach -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                </div>
-                <div class="card-body">
-                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                        CSS bloat and poor page performance. Custom CSS classes are used to create
-                        custom components and custom utility classes.</p>
-                    <p class="mb-0">Before working with this theme, you should become familiar with the
-                        Bootstrap framework, especially the utility classes.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
+    </footer>
 </div>
-
 @endsection
