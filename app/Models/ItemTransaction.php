@@ -10,12 +10,16 @@ class ItemTransaction extends Model
 {
     use HasFactory, SoftDeletes;
 
-    public function Transaction()
+    protected $fillable = [
+        'id_transaction', 'id_album', 'price', 'qty', 'total'
+    ];
+
+    public function transaction()
     {
         return $this->belongsTo(Transaction::class, 'id_transaction');
     }
 
-    public function Album()
+    public function album()
     {
         return $this->belongsTo(Album::class, 'id_album');
     }

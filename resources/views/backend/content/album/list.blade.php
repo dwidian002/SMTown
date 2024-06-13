@@ -27,7 +27,7 @@
                                 <th>Nama Album</th>
                                 <th>Gambar album</th>
                                 <th>Genre</th>
-                                <th>Barcode</th>
+                                <th>Stock</th>
                                 <th>Nama Artist</th>
                                 <th>Price</th>
                                 <th>Aksi</th>
@@ -43,7 +43,7 @@
                                 <td>{{$row->name_album}}</td>
                                 <td><img src="{{route('storage', $row->gambar_album)}}" width="200px" height="200px"></td>
                                 <td>{{$row->genre}}</td>
-                                <td>{{$row->barcode}}</td>
+                                <td>{{$row->stock}}</td>
                                 <td>{{$row->artist->nama_artist}}</td>
                                 <td>{{$row->price}}</td>
                                 <td>

@@ -19,19 +19,19 @@
                         </thead>
                         <tbody>
                             @php($counter = 1)
-                            @foreach ($rows as $row )
+                            @foreach ($rows as $row)
                                 <tr>
-                                    <td>{{$counter++}}</td>
-                                    <td>{{$row->code}}</td>
-                                    <td>{{$row->date}}</td>
-                                    <td >Rp {{$row->total}}</td>
+                                    <td>{{ $counter++ }}</td>
+                                    <td>{{ $row->code }}</td>
+                                    <td>{{ $row->date }}</td>
+                                    <td>Rp {{ $row->total }}</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-info">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="{{url("transaksi/$row->id/pdf")}}"
-                                            target="_blank"
-                                            class="btn btn-sm btn-danger">
+                                        <a href="{{ route('transaksi.printPDF', $row->id) }}"
+                                           target="_blank"
+                                           class="btn btn-sm btn-danger">
                                             <i class="fas fa-file-pdf"></i>
                                         </a>
                                     </td>
@@ -42,7 +42,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 @endsection

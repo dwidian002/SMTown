@@ -40,16 +40,20 @@
             <i class="fas fa-fw fa-users"></i>
             <span>Album</span>
         </a>
-        <a href="{{ url('admin/kasir/') }}" class="nav-link">
+        <a class="nav-link" href="{{ route('kasir.index') }}">
             <i class="nav-icon fas fa-cash-register"></i>
+            <span>Aplikasi Kasir</span>
+        </a>
+        <a href="{{ url('/transaksi') }}" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
             <span>
-                Aplikasi Kasir
+                Data Transaksi
             </span>
         </a>
 
     <li class="nav-item">
-        <a href="{{ url('/transaksi') }}" class="nav-link">
-            <i class="nav-icon fas fa-list"></i>
+        <a href="" class="nav-link">
+            <i class=""></i>
             <p>
                 Data Transaksi
             </p>
