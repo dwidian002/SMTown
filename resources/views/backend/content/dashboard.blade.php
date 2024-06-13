@@ -4,7 +4,6 @@
 <div class="container-fluid py-4">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
     <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -13,19 +12,15 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Artist</p>
                                 <h5 class="font-weight-bolder">
-                                    $53,000
+                                    {{$totalArtist}}
                                 </h5>
-                                <p class="mb-0">
-                                    <span class="text-success text-sm font-weight-bolder">+55%</span>
-                                    since yesterday
-                                </p>
                             </div>
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="ni ni-album-2 text-lg opacity-10" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -38,19 +33,15 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Artist</p>
                                 <h5 class="font-weight-bolder">
-                                    2,300
+                                    {{$totalAlbum}}
                                 </h5>
-                                <p class="mb-0">
-                                    <span class="text-success text-sm font-weight-bolder">+3%</span>
-                                    since last week
-                                </p>
                             </div>
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="ni ni-book-bookmark text-lg opacity-10" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>

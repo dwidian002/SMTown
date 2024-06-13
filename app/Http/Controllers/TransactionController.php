@@ -10,7 +10,7 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $rows = Transaction::query()->get();
+        $rows = Transaction::all();
         return view('backend.content.transaction.list', [
             'rows' => $rows
         ]);
@@ -18,12 +18,13 @@ class TransactionController extends Controller
 
     public function printPDF($id)
     {
-        $row = Transaction::with('itemTransactions.album')->find($id);
+        $row = Transaction::with('itemTransactions.album')->findOrFail($id);
         if ($row === null) {
             abort(404);
         }
-        $pdf = Pdf::loadView('backend.content.transaction.print-pdf', ['row' => $row])
-                  ->setPaper('A4');
-        return $pdf->stream('Invoice' . $row->code . '.pdf');
+
+        $pdf = Pdf::loadView('content.transaction.print-pdf', ['row' => $row])
+            ->setPaper('A4');
+        return $pdf->stream('Invoice ' . $row->code . '.pdf');
     }
 }

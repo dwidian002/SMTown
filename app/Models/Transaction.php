@@ -10,9 +10,16 @@ class Transaction extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'transaction';
+
     protected $fillable = [
         'code', 'date', 'subtotal', 'discount', 'total', 'created_by'
     ];
+
+    public function itemTransaction()
+    {
+        return $this->hasMany(ItemTransaction::class, 'id_transaction');
+    }
 
     public static function getLastCode($prefix)
     {
@@ -24,21 +31,16 @@ class Transaction extends Model
         return $prefix . str_pad(($lastNumber + 1), 4, '0', STR_PAD_LEFT);
     }
 
-    public function itemTransactions()
-    {
-        return $this->hasMany(ItemTransaction::class, 'id_transaction');
-    }
-
     protected static function boot()
     {
         parent::boot();
 
         static::deleting(function ($transaction) {
-            $transaction->itemTransactions()->delete();
+            $transaction->itemTransaction()->delete();
         });
 
         static::restoring(function ($transaction) {
-            $transaction->itemTransactions()->restore();
+            $transaction->itemTransaction()->restore();
         });
     }
 }

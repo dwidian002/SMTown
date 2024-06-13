@@ -5,9 +5,11 @@
             <div class="col-lg-6">
                 <h1 class="h3 mb-2 text-gray-800">List Album</h1>
             </div>
+            @can('admin')
             <div class="col-lg-6 text-right">
                 <a href="{{ route('album.tambah') }}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
             </div>
+            @endcan
         </div>
 
         @if (session()->has('pesan'))

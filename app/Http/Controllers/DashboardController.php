@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
+use App\Models\Artist;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +13,13 @@ use Illuminate\Support\Facades\Hash;
 class DashboardController extends Controller
 {
     public function index(){
-        return view('backend.content.dashboard');
+        $totalArtist = Artist::count();
+        $totalAlbum = Album::count();
+        $totalUser = User::count();
+        $totalTransaction = Transaction::count();
+
+        $latestTransaction = Transaction::with('album','item_Transaction')->latest()->get()->take(10);
+        return view('backend.content.dashboard', compact('totalArtist', 'totalAlbum', 'totalUser', 'totalUser','totalTransaction','latestTransaction'));
     }
 
     public function profile()

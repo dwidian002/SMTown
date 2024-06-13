@@ -40,7 +40,7 @@
         </tr>
         @foreach ($row->itemTransactions as $item)
             <tr>
-                <td>{{ $item->album->name }}</td>
+                <td>{{ $item->album->name_album }}</td>
                 <td>{{ $item->price }}</td>
                 <td>{{ $item->qty }}</td>
                 <td>{{ $item->total }}</td>

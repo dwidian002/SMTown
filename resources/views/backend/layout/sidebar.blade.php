@@ -43,11 +43,11 @@
           <span class="nav-link-text ms-1">Album</span>
         </a>
       </li>
-      @can('superadmin')
+      @can('admin')
       <li class="nav-item">
         <a class="nav-link " href="{{route('user.list')}}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fa fa-address-book ni ni-single-02 text-success text-sm opacity-10"></i>
+            <i class="fa fa-address-book ni ni-single-02 text-secondary text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Daftar Kasir</span>
         </a>
@@ -64,7 +64,7 @@
       <li class="nav-item">
         <a class="nav-link " href="{{ route('transaksi.index') }}">
           <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="nav-icon fas fa-list ni ni-collection text-danger text-sm opacity-10"></i>
+            <i class="nav-icon fas fa-list ni ni-collection text-success text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Data Transaksi</span>
         </a>

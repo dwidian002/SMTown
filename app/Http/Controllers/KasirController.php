@@ -17,27 +17,17 @@ class KasirController extends Controller
         return view('backend.content.kasir.index');
     }
 
-    public function searchAlbum(Request $request)
+    public function searchProduct(Request $request)
     {
-        $barcode = $request->input('barcode');
-        $album = Album::where('barcode', $barcode)->first();
-
-        if ($album) {
-            return response()->json($album);
-        } else {
+        $album = Album::query()->where('barcode', $request->barcode)->first();
+        if ($album === null) {
             return response()->json([], 404);
         }
+        return response()->json($album);
     }
 
     public function insert(Request $request)
     {
-        $request->validate([
-            'id_album.*' => 'required|integer|exists:albums,id',
-            'price.*' => 'required|numeric',
-            'qty.*' => 'required|integer|min:1',
-            'discount' => 'required|numeric|min:0|max:100',
-        ]);
-
         DB::beginTransaction();
         try {
             $prefix = 'INV/' . date('ym') . '/';
@@ -53,7 +43,6 @@ class KasirController extends Controller
 
             $subtotal = 0;
             $itemCount = count($request->price);
-
             for ($i = 0; $i < $itemCount; $i++) {
                 $it = new ItemTransaction();
                 $it->id_transaction = $transaction->id_transaction;
@@ -64,7 +53,6 @@ class KasirController extends Controller
                 $it->save();
                 $subtotal += $it->total;
             }
-
             $transaction->subtotal = $subtotal;
             $discount = $subtotal * (int)$request->discount / 100;
             $transaction->discount = $request->discount;
@@ -73,8 +61,8 @@ class KasirController extends Controller
 
             DB::commit();
             return redirect()->back()->with('berhasil', 'Transaksi Berhasil');
-        } catch (Exception $e) {
-            DB::rollback();
+        } catch (\Exception $e) {
+            DB::rollBack();
             return redirect()->back()->with('gagal', 'Transaksi Gagal');
         }
     }
