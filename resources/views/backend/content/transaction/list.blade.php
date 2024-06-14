@@ -4,7 +4,8 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        <div class="card">
+        <h2 style="margin-left: 15px;">List Transakasi</h2>
+        <div class="card" style="margin-left: 15px;">
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table">
@@ -26,13 +27,11 @@
                                 <td>{{$row->date}}</td>
                                 <td class="text-right">Rp {{$row->total}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-info">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                    <a href="{{url("transaksi/$row->id_transaction/pdf")}}"
+                                    <a href="{{route('transaksi.printPDF',$row->id_transaction)}}"
                                        target="_blank"
                                        class="btn btn-sm btn-danger">
                                         <i class="fas fa-file-pdf"></i>
+                                        Print
                                     </a>
                                 </td>
                             </tr>

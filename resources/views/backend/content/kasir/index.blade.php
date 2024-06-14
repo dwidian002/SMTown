@@ -50,17 +50,17 @@
 </style>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-12"style="margin-left: 15px;">
         <input type="text" id="input-barcode" name="barcode" class="form-control" placeholder="Scan Barcode" />
     </div>
 </div>
 <form method="post" action="{{ route('kasir.insert') }}">
     <div class="row mt-3">
         @csrf
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <table class="table table-striped" id="table-cart">
+        <div class="col-md-8" >
+            <div class="card" style="margin-left: 15px;">
+                <div class="card-body" >
+                    <table class="table table-striped" id="table-cart" >
                         <thead>
                             <tr>
                                 <th>Barcode</th>

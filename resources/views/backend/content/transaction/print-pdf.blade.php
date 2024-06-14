@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Invoice {{ $row->code }}</title>
+    <title>Invoice {{ $transaction->code }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,17 +28,17 @@
 <body>
     <div class="header">
         <h1>Invoice Belanja</h1>
-        <h2>{{ $row->code }}</h2>
+        <h2>{{ $transaction->code }}</h2>
     </div>
     <hr>
     <table class="table-data">
         <tr>
-            <th>Nama Album</th>
+            <th>Nama Produk</th>
             <th>@</th>
             <th>QTY</th>
             <th>Total</th>
         </tr>
-        @foreach ($row->itemTransaction as $item)
+        @foreach ($transaction->itemTransactions as $item)
             <tr>
                 <td>{{ $item->album->name_album }}</td>
                 <td>{{ $item->price }}</td>

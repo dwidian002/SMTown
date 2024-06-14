@@ -10,13 +10,14 @@ class Transaction extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'transaction';
+    protected $table = 'transaction'; // Nama tabel seharusnya `transactions` secara konvensional
+    protected $primaryKey = 'id_transaction'; // Pastikan primary key sesuai dengan tabel
 
     protected $fillable = [
         'code', 'date', 'subtotal', 'discount', 'total', 'created_by'
     ];
 
-    public function itemTransaction()
+    public function itemTransactions()
     {
         return $this->hasMany(ItemTransaction::class, 'id_transaction');
     }
@@ -36,11 +37,11 @@ class Transaction extends Model
         parent::boot();
 
         static::deleting(function ($transaction) {
-            $transaction->itemTransaction()->delete();
+            $transaction->itemTransactions()->delete();
         });
 
         static::restoring(function ($transaction) {
-            $transaction->itemTransaction()->restore();
+            $transaction->itemTransactions()->restore();
         });
     }
 }
