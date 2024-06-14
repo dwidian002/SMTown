@@ -90,7 +90,7 @@
                         <tr>
                             <td>
                                 <label for="discount">Discount (%)</label>
-                                <input type="number" min="0" max="100" name="discount" id="discount" value='0' class="form-control text-right">
+                                <input type="number" min="0" max="100" name="discount" id="discount" value="0" class="form-control text-right">
                             </td>
                         </tr>
                         <tr>
@@ -113,11 +113,10 @@
 
 @push('js')
 <script>
-    $(function() {
+    $(document).ready(function() {
         $('#input-barcode').on('keypress', function(e) {
             if (e.which === 13) {
                 e.preventDefault(); // Prevent form submission on Enter
-                console.log('Enter pressed');
                 $.ajax({
                     url: "{{ route('kasir.searchBarcode') }}",
                     type: 'POST',
@@ -126,13 +125,11 @@
                         barcode: $(this).val()
                     },
                     success: function(data) {
-                        console.log(data);
                         addProductToTable(data);
                         toastr.success('Album berhasil ditambahkan ke keranjang belanja', 'Berhasil');
                         $('#input-barcode').val('');
                     },
                     error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
                         toastr.error('Album yang dicari tidak ditemukan', 'Error');
                         $('#input-barcode').val('');
                     }
@@ -178,7 +175,7 @@
             $('#total').val(total);
         }
 
-        $('#discount').on('change', function() {
+        $('#discount').on('input', function() {
             hitungTotalBelanja();
         });
     });

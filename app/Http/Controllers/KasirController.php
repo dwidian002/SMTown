@@ -30,7 +30,8 @@ class KasirController extends Controller
 
     public function insert(Request $request)
     {
-        // Validation rules for the request data
+
+
         $request->validate([
             'id_album' => 'required|array',
             'id_album.' => 'exists:albums,id',
@@ -72,6 +73,7 @@ class KasirController extends Controller
                 Log::info('ItemTransaction saved:', ['item_transaction_id' => $it->id]);
 
                 $subtotal += $it->total;
+                dd($subtotal += $it->total);
             }
 
             // Apply discount and update transaction totals
