@@ -38,7 +38,7 @@
             <th>QTY</th>
             <th>Total</th>
         </tr>
-        @foreach ($row->itemTransactions as $item)
+        @foreach ($row->itemTransaction as $item)
             <tr>
                 <td>{{ $item->album->name_album }}</td>
                 <td>{{ $item->price }}</td>

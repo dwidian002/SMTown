@@ -2,18 +2,65 @@
 @section('judul', 'Aplikasi Kasir')
 @section('content')
 
+<style>
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #5e72e4;
+        border-color: #5e72e4;
+    }
+
+    .btn-primary:hover {
+        background-color: #324cdd;
+        border-color: #324cdd;
+    }
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .card-footer {
+        background-color: #f0f2f5;
+        border-top: 1px solid #dee2e6;
+        border-bottom-left-radius: calc(0.25rem - 1px);
+        border-bottom-right-radius: calc(0.25rem - 1px);
+        padding: 0.75rem 1.25rem;
+    }
+
+    .card-footer .btn-primary {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .card-footer .btn-primary:hover {
+        background-color: #324cdd;
+        border-color: #324cdd;
+    }
+
+    .card-footer .btn-primary i {
+        margin-right: 8px;
+    }
+</style>
+
 <div class="row">
     <div class="col-12">
         <input type="text" id="input-barcode" name="barcode" class="form-control" placeholder="Scan Barcode" />
     </div>
 </div>
 <form method="post" action="{{ route('kasir.insert') }}">
-    <div class="row">
+    <div class="row mt-3">
         @csrf
-        <div class="col-8 mt-3">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <table class="table" id="table-cart">
+                    <table class="table table-striped" id="table-cart">
                         <thead>
                             <tr>
                                 <th>Barcode</th>
@@ -30,32 +77,32 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 mt-3">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
                     <table width="100%">
                         <tr>
                             <td>
-                                <label for="">Subtotal</label>
+                                <label for="subtotal">Subtotal</label>
                                 <input type="text" readonly name="subtotal" id="subtotal" class="form-control text-right">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="">Discount (%)</label>
+                                <label for="discount">Discount (%)</label>
                                 <input type="number" min="0" max="100" name="discount" id="discount" value='0' class="form-control text-right">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="">Total</label>
+                                <label for="total">Total</label>
                                 <input type="text" readonly name="total" id="total" class="form-control text-right">
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                 </div>
             </div>
         </div>

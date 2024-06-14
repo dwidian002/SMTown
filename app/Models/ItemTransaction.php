@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,6 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ItemTransaction extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $table = 'item_transaction'; // Pastikan nama tabel
 
     protected $fillable = [
         'id_transaction', 'id_album', 'price', 'qty', 'total'
